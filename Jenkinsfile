@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script{
                   def dockerPath = tool 'docker_local'
-                  echo `which docker`
+                  sh 'which docker'
                   env.PATH = "${dockerPath}/bin:${env.PATH}"
                   sh 'docker build -t hello-simple:test .'
                 }
