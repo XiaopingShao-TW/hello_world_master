@@ -3,13 +3,17 @@ pipeline{
     stages {
         stage('Build') {
             steps{
-                echo 'This is a builddddpp step'
+                echo 'This is a build step' 
             }
         }
         stage('Test') {
+                input {
+                message "Should we continue?"
+                ok "Yes, we should."
+            }
             steps{
                 echo 'This is a test step' 
-                sleep(20)
+                sleep(5)
             }
         }
         stage('Deploy') {
