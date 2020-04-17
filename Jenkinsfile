@@ -7,13 +7,9 @@ pipeline{
             }
         }
         stage('Test') {
-                input {
-                message "Should we continue?"
-                ok "Yes, we should."
-            }
             steps{
                 echo 'This is a test step' 
-                sleep(5)
+                sleep(600)
             }
         }
         stage('Deploy') {
