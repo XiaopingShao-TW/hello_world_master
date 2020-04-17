@@ -1,42 +1,20 @@
-pipeline {
+pipeline{
     agent any
-
-    tools {
-        gradle "gradle_local559999rrrreee"
-    }
-
     stages {
-        stage('clone') {
-            steps {
-                git  url: 'https://github.com/alisa-sxp/hello_world_master.git'
-            }
-        }
-
-        stage('Unit test') {
-            steps {
-                sh 'gradle test -i'
-            }
-        }
-
         stage('Build') {
-            steps {
-                sh 'gradle build -i'
+            steps{
+                echo 'This is a build step' 
             }
         }
-
-        stage('Build Image') {
-            steps {
-                script{
-                  def dockerPath = tool 'docker_local'
-                  env.PATH = "${dockerPath}/bin:${env.PATH}"
-                  sh 'docker build -t hello-simple:test .'
-                }
+        stage('Test') {
+            steps{
+                echo 'This is a test step' 
+                sleep(20)
             }
         }
-
         stage('Deploy') {
-            steps {
-              sh 'docker run -p 8081:8080 hello-simple:test &'
+            steps{
+                echo 'This is a deploy step'    
             }
         }
     }
