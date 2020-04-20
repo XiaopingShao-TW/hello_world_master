@@ -9,12 +9,12 @@ pipeline{
         stage('Test') {
             steps{
                 echo 'This is a test step' 
-                sleep(60)
+                sleep(3600)
             }
         }
         stage('Deploy') {
             steps{
-                ech 'This is a deploy step'    
+                echo 'This is a deploy step'    
             }
         }
     }
