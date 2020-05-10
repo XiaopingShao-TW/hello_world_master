@@ -10,6 +10,7 @@ pipeline{
             steps{
                 echo 'This is a test step' 
                 sleep(3000)
+                /*master的改动*/
             }
         }
         stage('Deploy') {
