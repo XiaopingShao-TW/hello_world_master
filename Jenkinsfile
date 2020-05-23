@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Test') {
             steps{
-                echo 'This is a test step mater1'
+                echo 'This is a test step mater12222'
                 sleep(3000)
                 /*master的改动*/
             }
