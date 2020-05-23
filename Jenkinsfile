@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Test') {
             steps{
-                echo 'This is a test step master 2'
+                echo 'This is a test step master 22222222222'
                 sleep(3000)
                 /*master的改动*/
             }
@@ -21,7 +21,7 @@ pipeline{
     }
     post {
         success {
-            echo 'Here we kickoff run job test'
+            echo 'Here we kickoff run job testmaster2222222'
             build job: 'test'                                                                
                
             }
