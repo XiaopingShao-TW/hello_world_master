@@ -8,14 +8,14 @@ pipeline{
         }
         stage('Test') {
             steps{
-                echo 'This is a test step master 22222222222'
+                echo 'This is a test step master 11111'
                 sleep(3000)
                 /*master的改动*/
             }
         }
         stage('Deploy') {
             steps{
-                echo 'This is a deploy step'    
+                echo 'This is a deploy stepmaster1111111111'
             }
         }
     }
